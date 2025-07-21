@@ -57,21 +57,9 @@
             margin-bottom: 20px;
         }
 
-        @media (min-width: 769px) {
-            .header-area {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .datetime {
-                text-align: right;
-            }
-        }
-
         .logo {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo img {
@@ -92,10 +80,12 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 15px;
         }
 
         .datetime {
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .digital-clock {
@@ -111,11 +101,11 @@
         }
 
         .download-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
             margin-bottom: 30px;
-            justify-items: center;
         }
 
         .download-card {
@@ -124,8 +114,7 @@
             padding: 20px;
             box-shadow: var(--shadow);
             text-align: center;
-            width: 100%;
-            max-width: 300px;
+            width: 280px;
         }
 
         .download-card img {
@@ -266,7 +255,7 @@
             font-weight: bold;
         }
 
-        .total-online-users {
+        .total-online {
             background-color: var(--card-bg);
             border-radius: 10px;
             padding: 20px;
@@ -275,9 +264,16 @@
             text-align: center;
         }
 
-        .total-online-users h2 {
+        .total-online h2 {
             margin-bottom: 15px;
             color: var(--primary-color);
+        }
+
+        .total-online-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
 
         .total-count {
@@ -286,33 +282,9 @@
             color: var(--secondary-color);
         }
 
-        .user-limit {
-            font-size: 14px;
+        .server-limit {
+            font-size: 16px;
             color: var(--text-color);
-            opacity: 0.8;
-        }
-
-        .server-status-tag {
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-left: 8px;
-        }
-
-        .status-good {
-            background-color: #2ecc71;
-            color: white;
-        }
-
-        .status-warning {
-            background-color: #f39c12;
-            color: white;
-        }
-
-        .status-full {
-            background-color: #e74c3c;
-            color: white;
         }
 
         .public-message {
@@ -343,13 +315,6 @@
             gap: 15px;
         }
 
-        @media (max-width: 768px) {
-            .floating-buttons {
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
         .floating-btn {
             width: 50px;
             height: 50px;
@@ -370,6 +335,10 @@
 
         .telegram-btn {
             background-color: #0088cc;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
         }
 
         .floating-btn:hover {
@@ -416,30 +385,20 @@
                 grid-template-columns: 1fr;
             }
             
+            .download-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
             .theme-toggle {
                 bottom: 20px;
                 left: 20px;
             }
-        }
-
-        .ping-value {
-            font-weight: bold;
-        }
-
-        .ping-excellent {
-            color: #2ecc71;
-        }
-
-        .ping-good {
-            color: #27ae60;
-        }
-
-        .ping-fair {
-            color: #f39c12;
-        }
-
-        .ping-poor {
-            color: #e74c3c;
         }
     </style>
 </head>
@@ -459,7 +418,6 @@
         </div>
 
         <div class="header-area">
-            <div></div> <!-- Empty div for spacing -->
             <div class="datetime">
                 <div class="digital-clock" id="digitalClock">00:00:00</div>
                 <div class="date" id="currentDate">January 1, 2023</div>
@@ -492,8 +450,17 @@
             </div>
         </div>
 
+        <!-- Total Online Users -->
+        <div class="total-online">
+            <h2>Total Online Users</h2>
+            <div class="total-online-info">
+                <div class="total-count" id="total-online-count">0</div>
+                <div class="server-limit">Server Limit: <span id="server-limit">200</span></div>
+            </div>
+        </div>
+
         <!-- Server Monitoring Section -->
-        <div class="server-grid">
+        <div class="server-grid" id="serverGrid">
             <!-- Thailand Servers -->
             <div class="server-card">
                 <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 1</h3>
@@ -506,15 +473,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">124</span>/250</span>
-                        <span class="usage-percent">49.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 49.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-excellent" id="th-server1-ping">Ping: 28ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -530,15 +497,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">412</span>/250</span>
-                        <span class="usage-percent">82.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 82.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-good" id="th-server2-ping">Ping: 32ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -554,15 +521,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">287</span>/250</span>
-                        <span class="usage-percent">57.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 57.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-excellent" id="th-server3-ping">Ping: 25ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.9%</span>
                 </div>
             </div>
@@ -578,15 +545,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">376</span>/250</span>
-                        <span class="usage-percent">75.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 75.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-good" id="th-server4-ping">Ping: 29ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.7%</span>
                 </div>
             </div>
@@ -602,15 +569,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">198</span>/250</span>
-                        <span class="usage-percent">39.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 39.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="th-server5-ping">Ping: 35ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -627,15 +594,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">387</span>/250</span>
-                        <span class="usage-percent">77.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 77.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="sg-server1-ping">Ping: 35ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -651,15 +618,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">421</span>/250</span>
-                        <span class="usage-percent">84.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 84.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="sg-server2-ping">Ping: 38ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.3%</span>
                 </div>
             </div>
@@ -675,15 +642,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">356</span>/250</span>
-                        <span class="usage-percent">71.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 71.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-good" id="sg-server3-ping">Ping: 32ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -699,15 +666,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">289</span>/250</span>
-                        <span class="usage-percent">57.8%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 57.8%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="sg-server4-ping">Ping: 41ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -723,15 +690,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">498</span>/250</span>
-                        <span class="usage-percent">99.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 99.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="sg-server5-ping">Ping: 45ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.1%</span>
                 </div>
             </div>
@@ -748,15 +715,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">292</span>/250</span>
-                        <span class="usage-percent">58.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 58.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="jp-server1-ping">Ping: 42ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.9%</span>
                 </div>
             </div>
@@ -772,15 +739,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">387</span>/250</span>
-                        <span class="usage-percent">77.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 77.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="jp-server2-ping">Ping: 39ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.7%</span>
                 </div>
             </div>
@@ -796,15 +763,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">156</span>/250</span>
-                        <span class="usage-percent">31.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 31.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="jp-server3-ping">Ping: 47ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -820,15 +787,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">423</span>/250</span>
-                        <span class="usage-percent">84.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 84.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="jp-server4-ping">Ping: 44ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -844,15 +811,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">376</span>/250</span>
-                        <span class="usage-percent">75.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 75.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="jp-server5-ping">Ping: 41ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -869,15 +836,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">256</span>/250</span>
-                        <span class="usage-percent">51.2%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 51.2%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-fair" id="in-server1-ping">Ping: 38ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 98.7%</span>
                 </div>
             </div>
@@ -893,15 +860,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">387</span>/250</span>
-                        <span class="usage-percent">77.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 77.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="in-server2-ping">Ping: 42ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 98.9%</span>
                 </div>
             </div>
@@ -917,15 +884,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">198</span>/250</span>
-                        <span class="usage-percent">39.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 39.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-poor" id="in-server3-ping">Ping: 45ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 98.5%</span>
                 </div>
             </div>
@@ -942,15 +909,15 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">403</span>/250</span>
-                        <span class="usage-percent">80.6%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 80.6%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-good" id="kr-server1-ping">Ping: 31ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.2%</span>
                 </div>
             </div>
@@ -966,25 +933,18 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: <span class="current-users">487</span>/250</span>
-                        <span class="usage-percent">97.4%</span>
+                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 97.4%"></div>
+                        <div class="progress-fill" style="width: 0%"></div>
                     </div>
                 </div>
                 <div class="server-info">
-                    <span class="ping-value ping-excellent" id="kr-server2-ping">Ping: 29ms</span>
+                    <span class="ping">Ping: 0ms</span>
                     <span>Uptime: 99.4%</span>
                 </div>
             </div>
-        </div>
-
-        <!-- Total Online Users Section -->
-        <div class="total-online-users">
-            <h2>Total Online Users</h2>
-            <div class="total-count" id="totalOnlineUsers">0</div>
-            <div class="user-limit">User Limit: 250</div>
         </div>
 
         <!-- Public Message Section -->
@@ -999,6 +959,9 @@
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
+        <a href="#" class="floating-btn facebook-btn" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
         <a href="#" class="floating-btn messenger-btn" title="Messenger">
             <i class="fab fa-facebook-messenger"></i>
         </a>
@@ -1048,114 +1011,42 @@
             }
         });
 
-        // Update ping values and server status
-        function updatePingValues() {
-            const pingElements = document.querySelectorAll('.ping-value');
-            
+        // Update ping times dynamically
+        function updatePingTimes() {
+            const pingElements = document.querySelectorAll('.ping');
             pingElements.forEach(el => {
-                // Get current ping value (remove "ms" and convert to number)
-                let currentPing = parseInt(el.textContent.replace('Ping: ', '').replace('ms', ''));
-                
-                // Random change between -5 and +5 ms
-                const change = Math.floor(Math.random() * 11) - 5;
-                currentPing += change;
-                
-                // Keep ping between 10 and 100 ms
-                currentPing = Math.max(10, Math.min(100, currentPing));
-                
-                // Update display
-                el.textContent = `Ping: ${currentPing}ms`;
-                
-                // Update color class based on ping value
-                el.className = 'ping-value';
-                if (currentPing < 30) {
-                    el.classList.add('ping-excellent');
-                } else if (currentPing < 40) {
-                    el.classList.add('ping-good');
-                } else if (currentPing < 50) {
-                    el.classList.add('ping-fair');
-                } else {
-                    el.classList.add('ping-poor');
-                }
+                const randomPing = Math.floor(Math.random() * 20) + 20; // Random ping between 20-40ms
+                el.textContent = `Ping: ${randomPing}ms`;
             });
         }
 
-        // Update server status tags
+        // Update server status and online users
         function updateServerStatus() {
-            const serverCards = document.querySelectorAll('.server-card');
+            let totalOnline = 0;
+            const serverLimit = 200;
             
-            serverCards.forEach(card => {
-                // Get current user count and max users
-                const userText = card.querySelector('.current-users').textContent;
-                const maxText = card.querySelector('.progress-label span:first-child').textContent.split('/')[1];
-                const currentUsers = parseInt(userText);
-                const maxUsers = parseInt(maxText);
-                const usagePercent = (currentUsers / maxUsers) * 100;
-                
-                // Remove any existing status tags
-                const existingTags = card.querySelectorAll('.server-status-tag');
-                existingTags.forEach(tag => tag.remove());
-                
-                // Add appropriate status tag
-                const statusIndicator = card.querySelector('.status-indicator');
-                const statusTag = document.createElement('span');
-                
-                if (usagePercent >= 90) {
-                    statusTag.className = 'server-status-tag status-full';
-                    statusTag.textContent = 'FULL';
-                } else if (usagePercent >= 70) {
-                    statusTag.className = 'server-status-tag status-warning';
-                    statusTag.textContent = 'BUSY';
-                } else {
-                    statusTag.className = 'server-status-tag status-good';
-                    statusTag.textContent = 'GOOD';
-                }
-                
-                statusIndicator.appendChild(statusTag);
-            });
-        }
-
-        // Refresh server data every 30 seconds
-        function refreshServerData() {
-            // Update user counts randomly to simulate changes
-            const userCountElements = document.querySelectorAll('.current-users');
-            let totalUsers = 0;
-            
+            // Update server user counts
+            const userCountElements = document.querySelectorAll('.user-count');
             userCountElements.forEach(el => {
-                const currentUsers = parseInt(el.textContent);
-                const maxUsers = parseInt(el.parentElement.textContent.split('/')[1]);
-                
-                // Random change between -5 and +5 users
-                const change = Math.floor(Math.random() * 11) - 5;
-                let newUsers = currentUsers + change;
-                
-                // Keep between 0 and maxUsers
-                newUsers = Math.max(0, Math.min(maxUsers, newUsers));
-                
-                // Update display
-                el.textContent = newUsers;
-                totalUsers += newUsers;
+                const randomUsers = Math.floor(Math.random() * serverLimit);
+                totalOnline += randomUsers;
+                const percentage = (randomUsers / serverLimit * 100).toFixed(1);
+                el.textContent = `Users: ${randomUsers}/${serverLimit}`;
                 
                 // Update progress bar
-                const percentage = (newUsers / maxUsers * 100).toFixed(1);
-                const progressBar = el.closest('.progress-container').querySelector('.progress-fill');
-                progressBar.style.width = `${percentage}%`;
+                const progressFill = el.parentElement.nextElementSibling.querySelector('.progress-fill');
+                progressFill.style.width = `${percentage}%`;
                 
                 // Update percentage text
-                const percentageElement = el.parentElement.nextElementSibling;
-                if (percentageElement) {
-                    percentageElement.textContent = `${percentage}%`;
-                }
+                el.nextElementSibling.textContent = `${percentage}%`;
             });
             
             // Update total online users
-            document.getElementById('totalOnlineUsers').textContent = totalUsers;
+            document.getElementById('total-online-count').textContent = totalOnline;
+            document.getElementById('server-limit').textContent = serverLimit;
             
-            // Update ping values
-            updatePingValues();
-            
-            // Update server status tags
-            updateServerStatus();
+            // Update ping times
+            updatePingTimes();
         }
 
         // Initialize and update clock every second
@@ -1163,14 +1054,13 @@
         updateDate();
         setInterval(updateClock, 1000);
 
-        // Initial data load
-        refreshServerData();
-        
-        // Update ping values every 2 seconds
-        setInterval(updatePingValues, 2000);
-        
-        // Refresh server data every 30 seconds
-        setInterval(refreshServerData, 30000);
+        // Update server status every 30 seconds
+        updateServerStatus();
+        setInterval(updateServerStatus, 30000);
+
+        // Update ping times every 5 seconds
+        updatePingTimes();
+        setInterval(updatePingTimes, 5000);
     </script>
 </body>
 </html>
