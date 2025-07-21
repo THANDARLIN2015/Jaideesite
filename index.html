@@ -50,37 +50,36 @@
             padding: 20px;
         }
 
-        header {
+        .header-area {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .logo img {
-            height: 50px;
-            margin-right: 15px;
+            height: 80px;
+            margin-bottom: 10px;
         }
 
         .logo-text h1 {
-            font-size: 24px;
+            font-size: 28px;
             color: var(--primary-color);
             margin-bottom: 5px;
         }
 
         .logo-text .providers {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--text-color);
             opacity: 0.8;
             display: flex;
-            gap: 10px;
+            justify-content: center;
+            gap: 15px;
         }
 
         .datetime {
@@ -266,7 +265,7 @@
         }
 
         .user-list {
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
         }
 
@@ -287,6 +286,12 @@
             border-radius: 50%;
             background-color: #ccc;
             margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
         }
 
         .public-message {
@@ -321,7 +326,6 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: var(--primary-color);
             color: white;
             display: flex;
             align-items: center;
@@ -330,31 +334,17 @@
             cursor: pointer;
             font-size: 20px;
             text-decoration: none;
+        }
+
+        .messenger-btn {
+            background-color: #0084ff;
+        }
+
+        .telegram-btn {
+            background-color: #0088cc;
         }
 
         .floating-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .floating-face-btn {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #1877f2;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .floating-face-btn:hover {
             transform: translateY(-3px);
         }
 
@@ -376,14 +366,13 @@
         }
 
         @media (max-width: 768px) {
-            header {
+            .header-area {
                 flex-direction: column;
                 text-align: center;
             }
             
             .logo {
                 margin-bottom: 15px;
-                justify-content: center;
             }
             
             .datetime {
@@ -404,11 +393,6 @@
                 right: 20px;
             }
             
-            .floating-face-btn {
-                bottom: 90px;
-                right: 20px;
-            }
-            
             .theme-toggle {
                 bottom: 20px;
                 left: 20px;
@@ -418,36 +402,36 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <!-- Site Logo Placeholder -->
-                <img src="https://via.placeholder.com/50x50" alt="Site Logo">
-                <div class="logo-text">
-                    <h1>Jaidee VPN Users Website</h1>
-                    <div class="providers">
-                        <span>DTAC</span>
-                        <span>TRUE</span>
-                        <span>AIS</span>
-                    </div>
+        <!-- Logo centered at top -->
+        <div class="logo">
+            <img src="https://via.placeholder.com/80x80" alt="Jaidee VPN Logo">
+            <div class="logo-text">
+                <h1>Jaidee VPN Users Website</h1>
+                <div class="providers">
+                    <span>DTAC</span>
+                    <span>TRUE</span>
+                    <span>AIS</span>
                 </div>
             </div>
+        </div>
+
+        <div class="header-area">
+            <div></div> <!-- Empty div for spacing -->
             <div class="datetime">
                 <div class="digital-clock" id="digitalClock">00:00:00</div>
                 <div class="date" id="currentDate">January 1, 2023</div>
             </div>
-        </header>
+        </div>
 
-        <!-- Moved Download Section to top -->
+        <!-- Download Section -->
         <div class="download-section">
             <div class="download-card">
-                <!-- APK Download Logo Placeholder -->
                 <img src="https://via.placeholder.com/80x80" alt="APK Logo 1">
                 <h3>VPN Client v1.2.3</h3>
                 <p>Latest version with all features</p>
                 <a href="#" class="download-btn">Download APK</a>
             </div>
             <div class="download-card">
-                <!-- APK Download Logo Placeholder -->
                 <img src="https://via.placeholder.com/80x80" alt="APK Logo 2">
                 <h3>VPN Client Lite</h3>
                 <p>Lightweight version for low-end devices</p>
@@ -455,7 +439,7 @@
             </div>
         </div>
 
-        <!-- Moved Image Spaces to top -->
+        <!-- Image Spaces -->
         <div class="image-spaces">
             <div class="image-space">
                 <i class="fas fa-image"></i>
@@ -479,11 +463,11 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: 124/250</span>
-                        <span>49.6%</span>
+                        <span>Users: 324/500</span>
+                        <span>64.8%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 49.6%"></div>
+                        <div class="progress-fill" style="width: 64.8%"></div>
                     </div>
                 </div>
                 <div class="server-info">
@@ -492,24 +476,94 @@
                 </div>
             </div>
 
-            <!-- Repeat similar blocks for other Thailand servers (2-5) -->
-            <!-- Singapore Servers -->
             <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 1</h3>
+                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 2</h3>
                 <div class="server-status">
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
                     </div>
-                    <span class="server-time" id="sg-server1-time">Server Time: 00:00:00</span>
+                    <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: 187/250</span>
-                        <span>74.8%</span>
+                        <span>Users: 412/500</span>
+                        <span>82.4%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 74.8%"></div>
+                        <div class="progress-fill" style="width: 82.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 32ms</span>
+                    <span>Uptime: 99.6%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 3</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 287/500</span>
+                        <span>57.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 57.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 25ms</span>
+                    <span>Uptime: 99.9%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 4</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 376/500</span>
+                        <span>75.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 29ms</span>
+                    <span>Uptime: 99.7%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 5</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 198/500</span>
+                        <span>39.6%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 39.6%"></div>
                     </div>
                 </div>
                 <div class="server-info">
@@ -518,7 +572,127 @@
                 </div>
             </div>
 
-            <!-- Repeat similar blocks for other Singapore servers (2-5) -->
+            <!-- Singapore Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 387/500</span>
+                        <span>77.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 77.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 35ms</span>
+                    <span>Uptime: 99.5%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 2</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 421/500</span>
+                        <span>84.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 84.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 38ms</span>
+                    <span>Uptime: 99.3%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 3</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 356/500</span>
+                        <span>71.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 71.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 32ms</span>
+                    <span>Uptime: 99.8%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 4</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 289/500</span>
+                        <span>57.8%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 57.8%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 41ms</span>
+                    <span>Uptime: 99.6%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 5</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 498/500</span>
+                        <span>99.6%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 99.6%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 45ms</span>
+                    <span>Uptime: 99.1%</span>
+                </div>
+            </div>
+
             <!-- Japan Servers -->
             <div class="server-card">
                 <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 1</h3>
@@ -527,15 +701,15 @@
                         <div class="status-dot online"></div>
                         <span>Online</span>
                     </div>
-                    <span class="server-time" id="jp-server1-time">Server Time: 00:00:00</span>
+                    <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: 92/250</span>
-                        <span>36.8%</span>
+                        <span>Users: 292/500</span>
+                        <span>58.4%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 36.8%"></div>
+                        <div class="progress-fill" style="width: 58.4%"></div>
                     </div>
                 </div>
                 <div class="server-info">
@@ -544,7 +718,102 @@
                 </div>
             </div>
 
-            <!-- Repeat similar blocks for other Japan servers (2-5) -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 2</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 387/500</span>
+                        <span>77.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 77.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 39ms</span>
+                    <span>Uptime: 99.7%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 3</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 156/500</span>
+                        <span>31.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 31.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 47ms</span>
+                    <span>Uptime: 99.8%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 4</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 423/500</span>
+                        <span>84.6%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 84.6%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 44ms</span>
+                    <span>Uptime: 99.5%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 5</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 376/500</span>
+                        <span>75.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 41ms</span>
+                    <span>Uptime: 99.6%</span>
+                </div>
+            </div>
+
             <!-- India Servers -->
             <div class="server-card">
                 <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 1</h3>
@@ -553,15 +822,15 @@
                         <div class="status-dot online"></div>
                         <span>Online</span>
                     </div>
-                    <span class="server-time" id="in-server1-time">Server Time: 00:00:00</span>
+                    <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: 156/250</span>
-                        <span>62.4%</span>
+                        <span>Users: 256/500</span>
+                        <span>51.2%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 62.4%"></div>
+                        <div class="progress-fill" style="width: 51.2%"></div>
                     </div>
                 </div>
                 <div class="server-info">
@@ -570,7 +839,54 @@
                 </div>
             </div>
 
-            <!-- Repeat similar blocks for other India servers (2-3) -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 2</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 387/500</span>
+                        <span>77.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 77.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 42ms</span>
+                    <span>Uptime: 98.9%</span>
+                </div>
+            </div>
+
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 3</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 198/500</span>
+                        <span>39.6%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 39.6%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 45ms</span>
+                    <span>Uptime: 98.5%</span>
+                </div>
+            </div>
+
             <!-- Korea Servers -->
             <div class="server-card">
                 <h3><img src="https://flagcdn.com/w20/kr.png" alt="Korea Flag"> Korea Server 1</h3>
@@ -579,15 +895,15 @@
                         <div class="status-dot online"></div>
                         <span>Online</span>
                     </div>
-                    <span class="server-time" id="kr-server1-time">Server Time: 00:00:00</span>
+                    <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Users: 203/250</span>
-                        <span>81.2%</span>
+                        <span>Users: 403/500</span>
+                        <span>80.6%</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" style="width: 81.2%"></div>
+                        <div class="progress-fill" style="width: 80.6%"></div>
                     </div>
                 </div>
                 <div class="server-info">
@@ -596,25 +912,36 @@
                 </div>
             </div>
 
-            <!-- Repeat similar blocks for other Korea servers (2) -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/kr.png" alt="Korea Flag"> Korea Server 2</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Users: 487/500</span>
+                        <span>97.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 97.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 29ms</span>
+                    <span>Uptime: 99.4%</span>
+                </div>
+            </div>
         </div>
 
+        <!-- Online Users Section with Live Updates -->
         <div class="online-users">
-            <h2>Online Users (1245)</h2>
-            <div class="user-list">
-                <div class="user-item">
-                    <div class="user-avatar"></div>
-                    <span>UserOne</span>
-                </div>
-                <div class="user-item">
-                    <div class="user-avatar"></div>
-                    <span>VPNMaster</span>
-                </div>
-                <div class="user-item">
-                    <div class="user-avatar"></div>
-                    <span>FastConnect99</span>
-                </div>
-                <!-- More users would be listed here -->
+            <h2>Online Users (<span id="online-count">0</span>)</h2>
+            <div class="user-list" id="user-list">
+                <!-- Users will be added dynamically -->
             </div>
         </div>
 
@@ -629,15 +956,11 @@
     </div>
 
     <!-- Floating Buttons -->
-    <a href="#" class="floating-face-btn" title="Facebook">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    
     <div class="floating-buttons">
-        <a href="#" class="floating-btn" title="Messenger">
+        <a href="#" class="floating-btn messenger-btn" title="Messenger">
             <i class="fab fa-facebook-messenger"></i>
         </a>
-        <a href="#" class="floating-btn" title="Telegram">
+        <a href="#" class="floating-btn telegram-btn" title="Telegram">
             <i class="fab fa-telegram"></i>
         </a>
     </div>
@@ -656,7 +979,7 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
             document.getElementById('digitalClock').textContent = `${hours}:${minutes}:${seconds}`;
             
-            // Update server times (just using same time for demo)
+            // Update server times
             const serverTimes = document.querySelectorAll('.server-time');
             serverTimes.forEach(el => {
                 el.textContent = `Server Time: ${hours}:${minutes}:${seconds}`;
@@ -683,10 +1006,55 @@
             }
         });
 
+        // Live Online Users
+        const usernames = [
+            "VPNMaster", "FastConnect", "SecureUser", "PrivateAccess", "NetShield",
+            "GhostMode", "TurboVPN", "StealthUser", "NinjaConnect", "ShadowLink",
+            "DragonVPN", "PhoenixUser", "TigerConnect", "LionShield", "BearProtect",
+            "EagleEye", "WolfPack", "FoxTunnel", "OwlGuard", "SharkVPN"
+        ];
+
+        function generateRandomUser() {
+            const name = usernames[Math.floor(Math.random() * usernames.length)];
+            const num = Math.floor(Math.random() * 1000);
+            return `${name}${num}`;
+        }
+
+        function updateOnlineUsers() {
+            const userCount = Math.floor(Math.random() * 500) + 800;
+            document.getElementById('online-count').textContent = userCount;
+            
+            const userList = document.getElementById('user-list');
+            userList.innerHTML = '';
+            
+            const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6', '#1abc9c'];
+            
+            for (let i = 0; i < 20; i++) {
+                const user = document.createElement('div');
+                user.className = 'user-item';
+                
+                const avatar = document.createElement('div');
+                avatar.className = 'user-avatar';
+                avatar.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                avatar.textContent = generateRandomUser().charAt(0).toUpperCase();
+                
+                const username = document.createElement('span');
+                username.textContent = generateRandomUser();
+                
+                user.appendChild(avatar);
+                user.appendChild(username);
+                userList.appendChild(user);
+            }
+        }
+
         // Initialize and update clock every second
         updateClock();
         updateDate();
         setInterval(updateClock, 1000);
+
+        // Update online users every 5 seconds
+        updateOnlineUsers();
+        setInterval(updateOnlineUsers, 5000);
     </script>
 </body>
 </html>
