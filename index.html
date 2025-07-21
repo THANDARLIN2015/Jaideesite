@@ -17,6 +17,11 @@
             --bg-color: #f9f9f9;
             --card-bg: #fff;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --excellent-color: #2ecc71;
+            --good-color: #3498db;
+            --highload-color: #f39c12;
+            --busy-color: #e67e22;
+            --full-color: #e74c3c;
         }
 
         .dark-mode {
@@ -28,6 +33,11 @@
             --bg-color: #2c3e50;
             --card-bg: #34495e;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            --excellent-color: #27ae60;
+            --good-color: #2980b9;
+            --highload-color: #d35400;
+            --busy-color: #e67e22;
+            --full-color: #c0392b;
         }
 
         * {
@@ -238,7 +248,6 @@
 
         .progress-fill {
             height: 100%;
-            background-color: var(--secondary-color);
             width: 0%;
             transition: width 0.5s ease;
         }
@@ -362,6 +371,39 @@
             font-size: 20px;
         }
 
+        .server-status-label {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .status-excellent {
+            background-color: var(--excellent-color);
+        }
+
+        .status-good {
+            background-color: var(--good-color);
+        }
+
+        .status-highload {
+            background-color: var(--highload-color);
+        }
+
+        .status-busy {
+            background-color: var(--busy-color);
+        }
+
+        .status-full {
+            background-color: var(--full-color);
+        }
+
+        .ping {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
             .header-area {
                 flex-direction: column;
@@ -468,6 +510,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-excellent">Excellent</span>
                     </div>
                     <span class="server-time" id="th-server1-time">Server Time: 00:00:00</span>
                 </div>
@@ -492,6 +535,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-good">Good</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -516,6 +560,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -540,6 +585,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-busy">Busy</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -564,6 +610,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-full">Full</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -589,6 +636,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-excellent">Excellent</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -613,6 +661,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-good">Good</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -637,6 +686,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -661,6 +711,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-busy">Busy</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -685,6 +736,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-full">Full</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -710,6 +762,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-excellent">Excellent</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -734,6 +787,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-good">Good</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -758,6 +812,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -782,6 +837,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-busy">Busy</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -806,6 +862,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-full">Full</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -831,6 +888,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-excellent">Excellent</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -855,6 +913,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-good">Good</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -879,6 +938,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -904,6 +964,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-busy">Busy</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -928,6 +989,7 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
+                        <span class="server-status-label status-full">Full</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
@@ -1020,6 +1082,15 @@
             });
         }
 
+        // Get status label based on user percentage
+        function getStatusLabel(percentage) {
+            if (percentage < 30) return { text: "Excellent", class: "status-excellent" };
+            if (percentage < 60) return { text: "Good", class: "status-good" };
+            if (percentage < 80) return { text: "Highload", class: "status-highload" };
+            if (percentage < 95) return { text: "Busy", class: "status-busy" };
+            return { text: "Full", class: "status-full" };
+        }
+
         // Update server status and online users
         function updateServerStatus() {
             let totalOnline = 0;
@@ -1037,8 +1108,21 @@
                 const progressFill = el.parentElement.nextElementSibling.querySelector('.progress-fill');
                 progressFill.style.width = `${percentage}%`;
                 
+                // Update progress bar color based on percentage
+                if (percentage < 30) progressFill.style.backgroundColor = "var(--excellent-color)";
+                else if (percentage < 60) progressFill.style.backgroundColor = "var(--good-color)";
+                else if (percentage < 80) progressFill.style.backgroundColor = "var(--highload-color)";
+                else if (percentage < 95) progressFill.style.backgroundColor = "var(--busy-color)";
+                else progressFill.style.backgroundColor = "var(--full-color)";
+                
                 // Update percentage text
                 el.nextElementSibling.textContent = `${percentage}%`;
+                
+                // Update status label
+                const statusLabel = getStatusLabel(percentage);
+                const statusElement = el.closest('.server-card').querySelector('.server-status-label');
+                statusElement.textContent = statusLabel.text;
+                statusElement.className = `server-status-label ${statusLabel.class}`;
             });
             
             // Update total online users
