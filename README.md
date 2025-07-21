@@ -1,2 +1,617 @@
-# Jaideesite
-Panel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaidee VPN Users Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --danger-color: #e74c3c;
+            --warning-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --primary-color: #2980b9;
+            --secondary-color: #27ae60;
+            --dark-color: #34495e;
+            --light-color: #bdc3c7;
+            --text-color: #ecf0f1;
+            --bg-color: #2c3e50;
+            --card-bg: #34495e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .datetime {
+            text-align: right;
+        }
+
+        .digital-clock {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .server-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .server-card h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .server-card h3 img {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .server-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .online {
+            background-color: var(--secondary-color);
+        }
+
+        .offline {
+            background-color: var(--danger-color);
+        }
+
+        .maintenance {
+            background-color: var(--warning-color);
+        }
+
+        .progress-container {
+            margin: 15px 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--secondary-color);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .server-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .server-time {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .download-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .download-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: var(--dark-color);
+        }
+
+        .image-spaces {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .image-space {
+            height: 200px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 2px dashed #ccc;
+        }
+
+        .image-space i {
+            font-size: 40px;
+            color: #ccc;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--dark-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .online-users {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        .online-users h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .user-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .user-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .user-item:last-child {
+            border-bottom: none;
+        }
+
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            .datetime {
+                text-align: center;
+            }
+            
+            .server-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-spaces {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .theme-toggle {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <!-- Site Logo Placeholder -->
+                <img src="https://via.placeholder.com/50x50" alt="Site Logo">
+                <h1>Game Server Monitor</h1>
+            </div>
+            <div class="datetime">
+                <div class="digital-clock" id="digitalClock">00:00:00</div>
+                <div class="date" id="currentDate">January 1, 2023</div>
+            </div>
+        </header>
+
+        <div class="server-grid">
+            <!-- Thailand Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time" id="th-server1-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Players: 124/250</span>
+                        <span>49.6%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 49.6%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 28ms</span>
+                    <span>Uptime: 99.8%</span>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other Thailand servers (2-5) -->
+            <!-- Singapore Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time" id="sg-server1-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Players: 187/250</span>
+                        <span>74.8%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 74.8%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 35ms</span>
+                    <span>Uptime: 99.5%</span>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other Singapore servers (2-5) -->
+            <!-- Japan Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time" id="jp-server1-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Players: 92/250</span>
+                        <span>36.8%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 36.8%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 42ms</span>
+                    <span>Uptime: 99.9%</span>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other Japan servers (2-5) -->
+            <!-- India Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time" id="in-server1-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Players: 156/250</span>
+                        <span>62.4%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 62.4%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 38ms</span>
+                    <span>Uptime: 98.7%</span>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other India servers (2-3) -->
+            <!-- Korea Servers -->
+            <div class="server-card">
+                <h3><img src="https://flagcdn.com/w20/kr.png" alt="Korea Flag"> Korea Server 1</h3>
+                <div class="server-status">
+                    <div class="status-indicator">
+                        <div class="status-dot online"></div>
+                        <span>Online</span>
+                    </div>
+                    <span class="server-time" id="kr-server1-time">Server Time: 00:00:00</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Players: 203/250</span>
+                        <span>81.2%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 81.2%"></div>
+                    </div>
+                </div>
+                <div class="server-info">
+                    <span>Ping: 31ms</span>
+                    <span>Uptime: 99.2%</span>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other Korea servers (2) -->
+        </div>
+
+        <div class="download-section">
+            <div class="download-card">
+                <!-- APK Download Logo Placeholder -->
+                <img src="https://via.placeholder.com/80x80" alt="APK Logo 1">
+                <h3>Game Client v1.2.3</h3>
+                <p>Latest version with all features</p>
+                <a href="#" class="download-btn">Download APK</a>
+            </div>
+            <div class="download-card">
+                <!-- APK Download Logo Placeholder -->
+                <img src="https://via.placeholder.com/80x80" alt="APK Logo 2">
+                <h3>Game Client Lite</h3>
+                <p>Lightweight version for low-end devices</p>
+                <a href="#" class="download-btn">Download APK</a>
+            </div>
+        </div>
+
+        <div class="image-spaces">
+            <div class="image-space">
+                <i class="fas fa-image"></i>
+            </div>
+            <div class="image-space">
+                <i class="fas fa-image"></i>
+            </div>
+        </div>
+
+        <div class="online-users">
+            <h2>Online Users (1245)</h2>
+            <div class="user-list">
+                <div class="user-item">
+                    <div class="user-avatar"></div>
+                    <span>PlayerOne</span>
+                </div>
+                <div class="user-item">
+                    <div class="user-avatar"></div>
+                    <span>GameMaster</span>
+                </div>
+                <div class="user-item">
+                    <div class="user-avatar"></div>
+                    <span>ProGamer99</span>
+                </div>
+                <!-- More users would be listed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn" title="Messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a href="#" class="floating-btn" title="Telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+        // Update Digital Clock
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('digitalClock').textContent = `${hours}:${minutes}:${seconds}`;
+            
+            // Update server times (just using same time for demo)
+            const serverTimes = document.querySelectorAll('.server-time');
+            serverTimes.forEach(el => {
+                el.textContent = `Server Time: ${hours}:${minutes}:${seconds}`;
+            });
+        }
+
+        // Update Date
+        function updateDate() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Toggle Dark/Light Mode
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Initialize and update clock every second
+        updateClock();
+        updateDate();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
