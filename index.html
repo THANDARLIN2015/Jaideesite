@@ -20,8 +20,6 @@
             --excellent-color: #2ecc71;
             --good-color: #3498db;
             --highload-color: #f39c12;
-            --busy-color: #e67e22;
-            --full-color: #e74c3c;
         }
 
         .dark-mode {
@@ -36,8 +34,6 @@
             --excellent-color: #27ae60;
             --good-color: #2980b9;
             --highload-color: #d35400;
-            --busy-color: #e67e22;
-            --full-color: #c0392b;
         }
 
         * {
@@ -391,12 +387,13 @@
             background-color: var(--highload-color);
         }
 
-        .status-busy {
-            background-color: var(--busy-color);
-        }
-
-        .status-full {
-            background-color: var(--full-color);
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 14px;
         }
 
         .ping {
@@ -451,6 +448,7 @@
             <img src="https://via.placeholder.com/80x80" alt="Jaidee VPN Logo">
             <div class="logo-text">
                 <h1>Jaidee VPN Users Website</h1>
+                <p>The Best Free VPN Of Thailand</p>
                 <div class="providers">
                     <span>DTAC</span>
                     <span>TRUE</span>
@@ -497,7 +495,7 @@
             <h2>Total Online Users</h2>
             <div class="total-online-info">
                 <div class="total-count" id="total-online-count">0</div>
-                <div class="server-limit">Server Limit: <span id="server-limit">200</span></div>
+                <div class="server-limit">Server Limit: <span id="server-limit">250</span></div>
             </div>
         </div>
 
@@ -516,7 +514,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -541,7 +539,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -566,7 +564,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -585,13 +583,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-busy">Busy</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -610,13 +608,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-full">Full</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -642,7 +640,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -667,7 +665,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -692,7 +690,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -711,13 +709,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-busy">Busy</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -736,13 +734,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-full">Full</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -768,7 +766,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -793,7 +791,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -818,7 +816,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -837,13 +835,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-busy">Busy</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -862,13 +860,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-full">Full</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -894,7 +892,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -919,7 +917,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -944,7 +942,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -964,13 +962,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-busy">Busy</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -989,13 +987,13 @@
                     <div class="status-indicator">
                         <div class="status-dot online"></div>
                         <span>Online</span>
-                        <span class="server-status-label status-full">Full</span>
+                        <span class="server-status-label status-highload">Highload</span>
                     </div>
                     <span class="server-time">Server Time: 00:00:00</span>
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
+                        <span class="user-count">Users: 0/250</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -1015,7 +1013,17 @@
             <div class="message-content">
                 <p>Welcome to Jaidee VPN service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
                 <p>For any issues, contact us via Messenger or Telegram.</p>
+                <p>DTAC Jaidee *117*30#  30 THB</p>
+                <p>TRUE Jaidee *900*8131# 31.50 THB</p>
+                <p>DTAC Gaming Plan DTAC APP</p>
+                <p>True Viber Plan *900*3809# 53 THB</p>
+                <p>True VDO Plan *900*1347# 54 THB</p>
             </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            © 2025 Jaidee VPN SERVICE. All rights reserved.
         </div>
     </div>
 
@@ -1086,15 +1094,13 @@
         function getStatusLabel(percentage) {
             if (percentage < 30) return { text: "Excellent", class: "status-excellent" };
             if (percentage < 60) return { text: "Good", class: "status-good" };
-            if (percentage < 80) return { text: "Highload", class: "status-highload" };
-            if (percentage < 95) return { text: "Busy", class: "status-busy" };
-            return { text: "Full", class: "status-full" };
+            return { text: "Highload", class: "status-highload" };
         }
 
         // Update server status and online users
         function updateServerStatus() {
             let totalOnline = 0;
-            const serverLimit = 200;
+            const serverLimit = 250;
             
             // Update server user counts
             const userCountElements = document.querySelectorAll('.user-count');
@@ -1111,9 +1117,7 @@
                 // Update progress bar color based on percentage
                 if (percentage < 30) progressFill.style.backgroundColor = "var(--excellent-color)";
                 else if (percentage < 60) progressFill.style.backgroundColor = "var(--good-color)";
-                else if (percentage < 80) progressFill.style.backgroundColor = "var(--highload-color)";
-                else if (percentage < 95) progressFill.style.backgroundColor = "var(--busy-color)";
-                else progressFill.style.backgroundColor = "var(--full-color)";
+                else progressFill.style.backgroundColor = "var(--highload-color)";
                 
                 // Update percentage text
                 el.nextElementSibling.textContent = `${percentage}%`;
@@ -1138,9 +1142,9 @@
         updateDate();
         setInterval(updateClock, 1000);
 
-        // Update server status every 30 seconds
+        // Update server status every 60 seconds (1 minute)
         updateServerStatus();
-        setInterval(updateServerStatus, 30000);
+        setInterval(updateServerStatus, 60000);
 
         // Update ping times every 5 seconds
         updatePingTimes();
