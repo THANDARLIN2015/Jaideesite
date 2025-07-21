@@ -69,9 +69,18 @@
             margin-right: 15px;
         }
 
-        .logo h1 {
+        .logo-text h1 {
             font-size: 24px;
             color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .logo-text .providers {
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.8;
+            display: flex;
+            gap: 10px;
         }
 
         .datetime {
@@ -88,6 +97,65 @@
             font-size: 14px;
             color: var(--text-color);
             opacity: 0.8;
+        }
+
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .download-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .download-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: var(--dark-color);
+        }
+
+        .image-spaces {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .image-space {
+            height: 200px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 2px dashed #ccc;
+        }
+
+        .image-space i {
+            font-size: 40px;
+            color: #ccc;
         }
 
         .server-grid {
@@ -184,116 +252,12 @@
             font-weight: bold;
         }
 
-        .download-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .download-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .download-card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .download-btn:hover {
-            background-color: var(--dark-color);
-        }
-
-        .image-spaces {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .image-space {
-            height: 200px;
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            border: 2px dashed #ccc;
-        }
-
-        .image-space i {
-            font-size: 40px;
-            color: #ccc;
-        }
-
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .floating-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .floating-btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .theme-toggle {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--dark-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            font-size: 20px;
-        }
-
         .online-users {
             background-color: var(--card-bg);
             border-radius: 10px;
             padding: 20px;
             box-shadow: var(--shadow);
-            margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .online-users h2 {
@@ -325,6 +289,92 @@
             margin-right: 10px;
         }
 
+        .public-message {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        .public-message h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .message-content {
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .floating-face-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #1877f2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .floating-face-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--dark-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -338,13 +388,10 @@
             
             .datetime {
                 text-align: center;
+                margin-top: 15px;
             }
             
-            .server-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .download-section {
+            .server-grid, .download-section {
                 grid-template-columns: 1fr;
             }
             
@@ -354,6 +401,11 @@
             
             .floating-buttons {
                 bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-face-btn {
+                bottom: 90px;
                 right: 20px;
             }
             
@@ -370,7 +422,14 @@
             <div class="logo">
                 <!-- Site Logo Placeholder -->
                 <img src="https://via.placeholder.com/50x50" alt="Site Logo">
-                <h1>Game Server Monitor</h1>
+                <div class="logo-text">
+                    <h1>Jaidee VPN Users Website</h1>
+                    <div class="providers">
+                        <span>DTAC</span>
+                        <span>TRUE</span>
+                        <span>AIS</span>
+                    </div>
+                </div>
             </div>
             <div class="datetime">
                 <div class="digital-clock" id="digitalClock">00:00:00</div>
@@ -378,6 +437,35 @@
             </div>
         </header>
 
+        <!-- Moved Download Section to top -->
+        <div class="download-section">
+            <div class="download-card">
+                <!-- APK Download Logo Placeholder -->
+                <img src="https://via.placeholder.com/80x80" alt="APK Logo 1">
+                <h3>VPN Client v1.2.3</h3>
+                <p>Latest version with all features</p>
+                <a href="#" class="download-btn">Download APK</a>
+            </div>
+            <div class="download-card">
+                <!-- APK Download Logo Placeholder -->
+                <img src="https://via.placeholder.com/80x80" alt="APK Logo 2">
+                <h3>VPN Client Lite</h3>
+                <p>Lightweight version for low-end devices</p>
+                <a href="#" class="download-btn">Download APK</a>
+            </div>
+        </div>
+
+        <!-- Moved Image Spaces to top -->
+        <div class="image-spaces">
+            <div class="image-space">
+                <i class="fas fa-image"></i>
+            </div>
+            <div class="image-space">
+                <i class="fas fa-image"></i>
+            </div>
+        </div>
+
+        <!-- Server Monitoring Section -->
         <div class="server-grid">
             <!-- Thailand Servers -->
             <div class="server-card">
@@ -391,7 +479,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Players: 124/250</span>
+                        <span>Users: 124/250</span>
                         <span>49.6%</span>
                     </div>
                     <div class="progress-bar">
@@ -417,7 +505,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Players: 187/250</span>
+                        <span>Users: 187/250</span>
                         <span>74.8%</span>
                     </div>
                     <div class="progress-bar">
@@ -443,7 +531,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Players: 92/250</span>
+                        <span>Users: 92/250</span>
                         <span>36.8%</span>
                     </div>
                     <div class="progress-bar">
@@ -469,7 +557,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Players: 156/250</span>
+                        <span>Users: 156/250</span>
                         <span>62.4%</span>
                     </div>
                     <div class="progress-bar">
@@ -495,7 +583,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Players: 203/250</span>
+                        <span>Users: 203/250</span>
                         <span>81.2%</span>
                     </div>
                     <div class="progress-bar">
@@ -511,53 +599,40 @@
             <!-- Repeat similar blocks for other Korea servers (2) -->
         </div>
 
-        <div class="download-section">
-            <div class="download-card">
-                <!-- APK Download Logo Placeholder -->
-                <img src="https://via.placeholder.com/80x80" alt="APK Logo 1">
-                <h3>Game Client v1.2.3</h3>
-                <p>Latest version with all features</p>
-                <a href="#" class="download-btn">Download APK</a>
-            </div>
-            <div class="download-card">
-                <!-- APK Download Logo Placeholder -->
-                <img src="https://via.placeholder.com/80x80" alt="APK Logo 2">
-                <h3>Game Client Lite</h3>
-                <p>Lightweight version for low-end devices</p>
-                <a href="#" class="download-btn">Download APK</a>
-            </div>
-        </div>
-
-        <div class="image-spaces">
-            <div class="image-space">
-                <i class="fas fa-image"></i>
-            </div>
-            <div class="image-space">
-                <i class="fas fa-image"></i>
-            </div>
-        </div>
-
         <div class="online-users">
             <h2>Online Users (1245)</h2>
             <div class="user-list">
                 <div class="user-item">
                     <div class="user-avatar"></div>
-                    <span>PlayerOne</span>
+                    <span>UserOne</span>
                 </div>
                 <div class="user-item">
                     <div class="user-avatar"></div>
-                    <span>GameMaster</span>
+                    <span>VPNMaster</span>
                 </div>
                 <div class="user-item">
                     <div class="user-avatar"></div>
-                    <span>ProGamer99</span>
+                    <span>FastConnect99</span>
                 </div>
                 <!-- More users would be listed here -->
+            </div>
+        </div>
+
+        <!-- Public Message Section -->
+        <div class="public-message">
+            <h2>Public Message</h2>
+            <div class="message-content">
+                <p>Welcome to Jaidee VPN service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
+                <p>For any issues, contact us via Messenger or Telegram.</p>
             </div>
         </div>
     </div>
 
     <!-- Floating Buttons -->
+    <a href="#" class="floating-face-btn" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    
     <div class="floating-buttons">
         <a href="#" class="floating-btn" title="Messenger">
             <i class="fab fa-facebook-messenger"></i>
