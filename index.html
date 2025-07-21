@@ -251,7 +251,7 @@
             font-weight: bold;
         }
 
-        .online-users {
+        .total-online {
             background-color: var(--card-bg);
             border-radius: 10px;
             padding: 20px;
@@ -259,39 +259,26 @@
             margin-bottom: 30px;
         }
 
-        .online-users h2 {
+        .total-online h2 {
             margin-bottom: 15px;
             color: var(--primary-color);
         }
 
-        .user-list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .user-item {
+        .total-online-info {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .user-item:last-child {
-            border-bottom: none;
-        }
-
-        .user-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+        .total-count {
+            font-size: 24px;
             font-weight: bold;
-            font-size: 12px;
+            color: var(--secondary-color);
+        }
+
+        .server-limit {
+            font-size: 14px;
+            color: var(--text-color);
         }
 
         .public-message {
@@ -342,6 +329,10 @@
 
         .telegram-btn {
             background-color: #0088cc;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
         }
 
         .floating-btn:hover {
@@ -449,8 +440,17 @@
             </div>
         </div>
 
+        <!-- Total Online Users -->
+        <div class="total-online">
+            <h2>Total Online Users</h2>
+            <div class="total-online-info">
+                <div class="total-count" id="total-online-count">0</div>
+                <div class="server-limit">Server Limit: 200</div>
+            </div>
+        </div>
+
         <!-- Server Monitoring Section -->
-        <div class="server-grid">
+        <div class="server-grid" id="serverGrid">
             <!-- Thailand Servers -->
             <div class="server-card">
                 <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 1</h3>
@@ -471,7 +471,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 28ms</span>
+                    <span class="ping">Ping: 28ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -495,7 +495,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 32ms</span>
+                    <span class="ping">Ping: 32ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -519,7 +519,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 25ms</span>
+                    <span class="ping">Ping: 25ms</span>
                     <span>Uptime: 99.9%</span>
                 </div>
             </div>
@@ -543,7 +543,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 29ms</span>
+                    <span class="ping">Ping: 29ms</span>
                     <span>Uptime: 99.7%</span>
                 </div>
             </div>
@@ -567,7 +567,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 35ms</span>
+                    <span class="ping">Ping: 35ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -592,7 +592,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 35ms</span>
+                    <span class="ping">Ping: 35ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -616,7 +616,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 38ms</span>
+                    <span class="ping">Ping: 38ms</span>
                     <span>Uptime: 99.3%</span>
                 </div>
             </div>
@@ -640,7 +640,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 32ms</span>
+                    <span class="ping">Ping: 32ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -664,7 +664,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 41ms</span>
+                    <span class="ping">Ping: 41ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -688,7 +688,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 45ms</span>
+                    <span class="ping">Ping: 45ms</span>
                     <span>Uptime: 99.1%</span>
                 </div>
             </div>
@@ -713,7 +713,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 42ms</span>
+                    <span class="ping">Ping: 42ms</span>
                     <span>Uptime: 99.9%</span>
                 </div>
             </div>
@@ -737,7 +737,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 39ms</span>
+                    <span class="ping">Ping: 39ms</span>
                     <span>Uptime: 99.7%</span>
                 </div>
             </div>
@@ -761,7 +761,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 47ms</span>
+                    <span class="ping">Ping: 47ms</span>
                     <span>Uptime: 99.8%</span>
                 </div>
             </div>
@@ -785,7 +785,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 44ms</span>
+                    <span class="ping">Ping: 44ms</span>
                     <span>Uptime: 99.5%</span>
                 </div>
             </div>
@@ -809,7 +809,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 41ms</span>
+                    <span class="ping">Ping: 41ms</span>
                     <span>Uptime: 99.6%</span>
                 </div>
             </div>
@@ -834,7 +834,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 38ms</span>
+                    <span class="ping">Ping: 38ms</span>
                     <span>Uptime: 98.7%</span>
                 </div>
             </div>
@@ -858,7 +858,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 42ms</span>
+                    <span class="ping">Ping: 42ms</span>
                     <span>Uptime: 98.9%</span>
                 </div>
             </div>
@@ -882,7 +882,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 45ms</span>
+                    <span class="ping">Ping: 45ms</span>
                     <span>Uptime: 98.5%</span>
                 </div>
             </div>
@@ -907,7 +907,7 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 31ms</span>
+                    <span class="ping">Ping: 31ms</span>
                     <span>Uptime: 99.2%</span>
                 </div>
             </div>
@@ -931,17 +931,9 @@
                     </div>
                 </div>
                 <div class="server-info">
-                    <span>Ping: 29ms</span>
+                    <span class="ping">Ping: 29ms</span>
                     <span>Uptime: 99.4%</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- Online Users Section with Live Updates -->
-        <div class="online-users">
-            <h2>Online Users (<span id="online-count">0</span>)</h2>
-            <div class="user-list" id="user-list">
-                <!-- Users will be added dynamically -->
             </div>
         </div>
 
@@ -957,6 +949,9 @@
 
     <!-- Floating Buttons -->
     <div class="floating-buttons">
+        <a href="#" class="floating-btn facebook-btn" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
         <a href="#" class="floating-btn messenger-btn" title="Messenger">
             <i class="fab fa-facebook-messenger"></i>
         </a>
@@ -1006,45 +1001,39 @@
             }
         });
 
-        // Live Online Users
-        const usernames = [
-            "VPNMaster", "FastConnect", "SecureUser", "PrivateAccess", "NetShield",
-            "GhostMode", "TurboVPN", "StealthUser", "NinjaConnect", "ShadowLink",
-            "DragonVPN", "PhoenixUser", "TigerConnect", "LionShield", "BearProtect",
-            "EagleEye", "WolfPack", "FoxTunnel", "OwlGuard", "SharkVPN"
-        ];
-
-        function generateRandomUser() {
-            const name = usernames[Math.floor(Math.random() * usernames.length)];
-            const num = Math.floor(Math.random() * 1000);
-            return `${name}${num}`;
+        // Update ping times dynamically
+        function updatePingTimes() {
+            const pingElements = document.querySelectorAll('.ping');
+            pingElements.forEach(el => {
+                const randomPing = Math.floor(Math.random() * 20) + 20; // Random ping between 20-40ms
+                el.textContent = `Ping: ${randomPing}ms`;
+            });
         }
 
-        function updateOnlineUsers() {
-            const userCount = Math.floor(Math.random() * 500) + 800;
-            document.getElementById('online-count').textContent = userCount;
+        // Update server status and online users
+        function updateServerStatus() {
+            // Update total online users
+            const totalOnline = Math.floor(Math.random() * 150) + 50; // Random between 50-200
+            document.getElementById('total-online-count').textContent = totalOnline;
             
-            const userList = document.getElementById('user-list');
-            userList.innerHTML = '';
+            // Update ping times
+            updatePingTimes();
             
-            const colors = ['#3498db', '#2ecc71', '#e74c3c', '#f39c12', '#9b59b6', '#1abc9c'];
-            
-            for (let i = 0; i < 20; i++) {
-                const user = document.createElement('div');
-                user.className = 'user-item';
+            // Update server user counts (optional)
+            const progressLabels = document.querySelectorAll('.progress-label span:first-child');
+            progressLabels.forEach(label => {
+                const parts = label.textContent.split('/');
+                const current = Math.floor(Math.random() * parseInt(parts[1]));
+                const percentage = (current / parseInt(parts[1]) * 100).toFixed(1);
+                label.textContent = `Users: ${current}/${parts[1]}`;
                 
-                const avatar = document.createElement('div');
-                avatar.className = 'user-avatar';
-                avatar.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                avatar.textContent = generateRandomUser().charAt(0).toUpperCase();
+                // Update progress bar
+                const progressFill = label.parentElement.nextElementSibling.querySelector('.progress-fill');
+                progressFill.style.width = `${percentage}%`;
                 
-                const username = document.createElement('span');
-                username.textContent = generateRandomUser();
-                
-                user.appendChild(avatar);
-                user.appendChild(username);
-                userList.appendChild(user);
-            }
+                // Update percentage text
+                label.nextElementSibling.textContent = `${percentage}%`;
+            });
         }
 
         // Initialize and update clock every second
@@ -1052,9 +1041,13 @@
         updateDate();
         setInterval(updateClock, 1000);
 
-        // Update online users every 5 seconds
-        updateOnlineUsers();
-        setInterval(updateOnlineUsers, 5000);
+        // Update server status every 30 seconds
+        updateServerStatus();
+        setInterval(updateServerStatus, 30000);
+
+        // Update ping times every 5 seconds
+        updatePingTimes();
+        setInterval(updatePingTimes, 5000);
     </script>
 </body>
 </html>
