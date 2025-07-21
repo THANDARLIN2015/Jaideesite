@@ -311,6 +311,30 @@
             border-radius: 5px;
         }
 
+        .subscription-code {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 5px;
+        }
+
+        .copy-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--dark-color);
+        }
+
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -468,13 +492,13 @@
         <div class="download-section">
             <div class="download-card">
                 <img src="https://via.placeholder.com/80x80" alt="APK Logo 1">
-                <h3>VPN Client v1.2.3</h3>
+                <h3>Jaidee VPN</h3>
                 <p>Latest version with all features</p>
                 <a href="#" class="download-btn">Download APK</a>
             </div>
             <div class="download-card">
                 <img src="https://via.placeholder.com/80x80" alt="APK Logo 2">
-                <h3>VPN Client Lite</h3>
+                <h3>JK VPN</h3>
                 <p>Lightweight version for low-end devices</p>
                 <a href="#" class="download-btn">Download APK</a>
             </div>
@@ -1013,11 +1037,31 @@
             <div class="message-content">
                 <p>Welcome to Jaidee VPN service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
                 <p>For any issues, contact us via Messenger or Telegram.</p>
-                <li>DTAC Jaidee *117*30#  30 THB</li>
-                <li>TRUE Jaidee *900*8131# 31.50 THB</li>
-                <li>DTAC Gaming Plan DTAC APP</p>
-                <li>True Viber Plan *900*3809# 53 THB</p>
-                <li>True VDO Plan *900*1347# 54 THB</li>
+                
+                <div class="subscription-code">
+                    <span>DTAC Jaidee *117*30# 30 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('DTAC Jaidee *117*30# 30 THB')">Copy</button>
+                </div>
+                
+                <div class="subscription-code">
+                    <span>TRUE Jaidee *900*8131# 31.50 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('TRUE Jaidee *900*8131# 31.50 THB')">Copy</button>
+                </div>
+                
+                <div class="subscription-code">
+                    <span>DTAC Gaming Plan DTAC APP</span>
+                    <button class="copy-btn" onclick="copyToClipboard('DTAC Gaming Plan DTAC APP')">Copy</button>
+                </div>
+                
+                <div class="subscription-code">
+                    <span>True Viber Plan *900*3809# 53 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('True Viber Plan *900*3809# 53 THB')">Copy</button>
+                </div>
+                
+                <div class="subscription-code">
+                    <span>True VDO Plan *900*1347# 54 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('True VDO Plan *900*1347# 54 THB')">Copy</button>
+                </div>
             </div>
         </div>
 
@@ -1135,6 +1179,15 @@
             
             // Update ping times
             updatePingTimes();
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard: ' + text);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
         }
 
         // Initialize and update clock every second
