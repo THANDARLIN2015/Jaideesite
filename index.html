@@ -1286,7 +1286,7 @@
                 else progressFill.style.backgroundColor = "var(--good-color)";
                 
                 // Update percentage text
-                el.nextElementSibling.textContent = `${percentage}%";
+                el.nextElementSibling.textContent = `${percentage}%`;
                 
                 // Update status label
                 const statusLabel = getStatusLabel(percentage);
@@ -1376,7 +1376,9 @@
         setInterval(updateClock, 1000);
 
         // Initialize graph
-        initializeGraph();
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGraph();
+        });
 
         // Update server status every 3 minutes (180000 milliseconds)
         updateServerStatus();
@@ -1392,6 +1394,15 @@
         // Check time for theme every minute
         checkTimeForTheme();
         setInterval(checkTimeForTheme, 60000);
+
+        // Initialize everything when page loads
+        window.onload = function() {
+            updateClock();
+            updateDate();
+            updateServerStatus();
+            updatePingTimes();
+            checkTimeForTheme();
+        };
     </script>
 </body>
 </html>
