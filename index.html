@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JKVPN VIP SERVICE</title>
+    <title>Jaidee VPN Users Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -71,11 +71,14 @@
         .logo {
             text-align: center;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         .logo img {
-            height: 80px;
-            margin-bottom: 10px;
+            height: 50px;
         }
 
         .logo-text h1 {
@@ -161,22 +164,22 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 30px;
-            height: 500px; /* Changed from 300px to 500px */
         }
 
         .image-space {
-            height: 100%;
             background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: var(--shadow);
             overflow: hidden;
             position: relative;
+            min-height: 300px;
         }
 
         .image-space img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            min-height: 300px;
         }
 
         .server-grid {
@@ -490,6 +493,7 @@
             
             .logo {
                 margin-bottom: 15px;
+                flex-direction: column;
             }
             
             .datetime {
@@ -503,7 +507,14 @@
             
             .image-spaces {
                 grid-template-columns: 1fr;
-                height: auto;
+            }
+            
+            .image-space {
+                min-height: 250px;
+            }
+            
+            .image-space img {
+                min-height: 250px;
             }
             
             .download-section {
@@ -525,21 +536,21 @@
 </head>
 <body>
     <div class="container">
-        <!-- Logo centered at top -->
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="JKVPN Logo">
-            <div class="logo-text">
-                <h1>JKVPN VIP SERVICE</h1> <!-- Changed from Jaidee VPN Users Website -->
-                <p>The Best Free VPN Of Thailand</p>
-                <div class="providers">
-                    <span>DTAC</span>
-                    <span>TRUE</span>
-                    <span>AIS</span>
+        <!-- Logo and Title at top -->
+        <div class="header-area">
+            <div class="logo">
+                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="Jaidee VPN Logo">
+                <div class="logo-text">
+                    <h1>Jaidee VPN Users Website</h1>
+                    <p>The Best Free VPN Of Thailand</p>
+                    <div class="providers">
+                        <span>DTAC</span>
+                        <span>TRUE</span>
+                        <span>AIS</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="header-area">
             <div class="datetime">
                 <div class="digital-clock" id="digitalClock">00:00:00</div>
                 <div class="date" id="currentDate">January 1, 2023</div>
@@ -549,8 +560,8 @@
         <!-- Download Section -->
         <div class="download-section">
             <div class="download-card">
-                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="JKVPN Logo">
-                <h3>JKVPN</h3>
+                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="Jaidee VPN Logo">
+                <h3>Jaidee VPN</h3>
                 <p>Latest version with all features</p>
                 <a href="https://play.google.com/store/apps/details?id=com.jaideevpn.net" class="download-btn">Download APK</a>
             </div>
@@ -565,7 +576,7 @@
         <!-- Image Spaces -->
         <div class="image-spaces">
             <div class="image-space">
-                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jd.png" alt="JKVPN Promotion">
+                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jd.png" alt="Jaidee VPN Promotion">
             </div>
             <div class="image-space">
                 <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jk.png" alt="JK VPN Promotion">
@@ -577,7 +588,7 @@
             <h2>Total Online Users</h2>
             <div class="total-online-info">
                 <div class="total-count" id="total-online-count">0</div>
-                <div class="server-limit">Server Limit: <span id="server-limit">250</span></div>
+                <div class="server-limit">Server Limit: <span id="server-limit">200</span></div>
             </div>
         </div>
 
@@ -596,7 +607,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -621,7 +632,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -646,7 +657,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -671,7 +682,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -696,7 +707,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -722,7 +733,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -747,7 +758,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -772,7 +783,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -797,7 +808,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -823,7 +834,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -848,7 +859,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -873,7 +884,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -898,7 +909,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -924,7 +935,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -949,7 +960,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -974,7 +985,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -1000,7 +1011,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -1025,7 +1036,7 @@
                 </div>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span class="user-count">Users: 0/250</span>
+                        <span class="user-count">Users: 0/200</span>
                         <span class="user-percent">0%</span>
                     </div>
                     <div class="progress-bar">
@@ -1043,7 +1054,6 @@
         <div class="graph-section">
             <h2>Server Performance Graph</h2>
             <div class="graph-container" id="performanceGraph">
-                <!-- Graph will be rendered here -->
                 <canvas id="serverGraphCanvas"></canvas>
             </div>
             <div class="graph-alive">
@@ -1056,17 +1066,17 @@
         <div class="public-message">
             <h2>Public Message</h2>
             <div class="message-content">
-                <p>Welcome to JKVPN VIP service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
+                <p>Welcome to Jaidee VPN service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
                 <p>For any issues, contact us via Messenger or Telegram.</p>
                 
                 <div class="subscription-code">
-                    <span>DTAC JKVPN *117*30# 30 THB</span>
-                    <button class="copy-btn" onclick="copyToClipboard('DTAC JKVPN *117*30# 30 THB')">Copy</button>
+                    <span>DTAC Jaidee *117*30# 30 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('DTAC Jaidee *117*30# 30 THB')">Copy</button>
                 </div>
                 
                 <div class="subscription-code">
-                    <span>TRUE JKVPN *900*8131# 31.50 THB</span>
-                    <button class="copy-btn" onclick="copyToClipboard('TRUE JKVPN *900*8131# 31.50 THB')">Copy</button>
+                    <span>TRUE Jaidee *900*8131# 31.50 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('TRUE Jaidee *900*8131# 31.50 THB')">Copy</button>
                 </div>
                 
                 <div class="subscription-code">
@@ -1088,7 +1098,7 @@
 
         <!-- Copyright Section -->
         <div class="copyright">
-            © 2025 JKVPN VIP SERVICE. All rights reserved.
+            © 2025 Jaidee VPN SERVICE. All rights reserved.
         </div>
     </div>
 
@@ -1160,13 +1170,13 @@
         function getStatusLabel(percentage) {
             if (percentage < 30) return { text: "Excellent", class: "status-excellent" };
             if (percentage < 60) return { text: "Good", class: "status-good" };
-            return { text: "Good", class: "status-good" }; // Changed from Highload to Good
+            return { text: "Good", class: "status-good" };
         }
 
         // Update server status and online users
         function updateServerStatus() {
             let totalOnline = 0;
-            const serverLimit = 250;
+            const serverLimit = 200;
             
             // Update server user counts
             const userCountElements = document.querySelectorAll('.user-count');
@@ -1183,7 +1193,7 @@
                 // Update progress bar color based on percentage
                 if (percentage < 30) progressFill.style.backgroundColor = "var(--excellent-color)";
                 else if (percentage < 60) progressFill.style.backgroundColor = "var(--good-color)";
-                else progressFill.style.backgroundColor = "var(--good-color)"; // Changed from highload to good
+                else progressFill.style.backgroundColor = "var(--good-color)";
                 
                 // Update percentage text
                 el.nextElementSibling.textContent = `${percentage}%`;
