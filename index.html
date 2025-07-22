@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaidee VPN Users Website</title>
+    <title>JKVPN VIP SERVICE</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -161,7 +161,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 30px;
-            height: 300px;
+            height: 500px; /* Changed from 300px to 500px */
         }
 
         .image-space {
@@ -437,6 +437,51 @@
             font-weight: bold;
         }
 
+        /* Graph Section */
+        .graph-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .graph-section h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .graph-container {
+            height: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .graph-alive {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .alive-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(0.95); }
+        }
+
         @media (max-width: 768px) {
             .header-area {
                 flex-direction: column;
@@ -482,9 +527,9 @@
     <div class="container">
         <!-- Logo centered at top -->
         <div class="logo">
-            <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="Jaidee VPN Logo">
+            <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="JKVPN Logo">
             <div class="logo-text">
-                <h1>Jaidee VPN Users Website</h1>
+                <h1>JKVPN VIP SERVICE</h1> <!-- Changed from Jaidee VPN Users Website -->
                 <p>The Best Free VPN Of Thailand</p>
                 <div class="providers">
                     <span>DTAC</span>
@@ -504,8 +549,8 @@
         <!-- Download Section -->
         <div class="download-section">
             <div class="download-card">
-                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="Jaidee VPN Logo">
-                <h3>Jaidee VPN</h3>
+                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="JKVPN Logo">
+                <h3>JKVPN</h3>
                 <p>Latest version with all features</p>
                 <a href="https://play.google.com/store/apps/details?id=com.jaideevpn.net" class="download-btn">Download APK</a>
             </div>
@@ -520,7 +565,7 @@
         <!-- Image Spaces -->
         <div class="image-spaces">
             <div class="image-space">
-                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jd.png" alt="Jaidee VPN Promotion">
+                <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jd.png" alt="JKVPN Promotion">
             </div>
             <div class="image-space">
                 <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jk.png" alt="JK VPN Promotion">
@@ -994,21 +1039,34 @@
             </div>
         </div>
 
+        <!-- Graph Section -->
+        <div class="graph-section">
+            <h2>Server Performance Graph</h2>
+            <div class="graph-container" id="performanceGraph">
+                <!-- Graph will be rendered here -->
+                <canvas id="serverGraphCanvas"></canvas>
+            </div>
+            <div class="graph-alive">
+                <div class="alive-dot"></div>
+                <span>Server Status: ALIVE</span>
+            </div>
+        </div>
+
         <!-- Public Message Section -->
         <div class="public-message">
             <h2>Public Message</h2>
             <div class="message-content">
-                <p>Welcome to Jaidee VPN service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
+                <p>Welcome to JKVPN VIP service! Our servers are running smoothly with 99.9% uptime. Please download our latest app for the best experience.</p>
                 <p>For any issues, contact us via Messenger or Telegram.</p>
                 
                 <div class="subscription-code">
-                    <span>DTAC Jaidee *117*30# 30 THB</span>
-                    <button class="copy-btn" onclick="copyToClipboard('DTAC Jaidee *117*30# 30 THB')">Copy</button>
+                    <span>DTAC JKVPN *117*30# 30 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('DTAC JKVPN *117*30# 30 THB')">Copy</button>
                 </div>
                 
                 <div class="subscription-code">
-                    <span>TRUE Jaidee *900*8131# 31.50 THB</span>
-                    <button class="copy-btn" onclick="copyToClipboard('TRUE Jaidee *900*8131# 31.50 THB')">Copy</button>
+                    <span>TRUE JKVPN *900*8131# 31.50 THB</span>
+                    <button class="copy-btn" onclick="copyToClipboard('TRUE JKVPN *900*8131# 31.50 THB')">Copy</button>
                 </div>
                 
                 <div class="subscription-code">
@@ -1030,7 +1088,7 @@
 
         <!-- Copyright Section -->
         <div class="copyright">
-            © 2025 Jaidee VPN SERVICE. All rights reserved.
+            © 2025 JKVPN VIP SERVICE. All rights reserved.
         </div>
     </div>
 
@@ -1052,6 +1110,7 @@
         <i class="fas fa-moon"></i>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Update Digital Clock
         function updateClock() {
@@ -1142,6 +1201,9 @@
             
             // Update ping times
             updatePingTimes();
+            
+            // Update graph
+            updateGraph();
         }
 
         // Copy to clipboard function
@@ -1153,10 +1215,68 @@
             });
         }
 
+        // Initialize performance graph
+        let serverGraph;
+        function initializeGraph() {
+            const ctx = document.getElementById('serverGraphCanvas').getContext('2d');
+            
+            serverGraph = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 12}, (_, i) => `${i*5}s`),
+                    datasets: [
+                        {
+                            label: 'Server Load %',
+                            data: Array(12).fill(0),
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Ping (ms)',
+                            data: Array(12).fill(0),
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // Update graph data
+        function updateGraph() {
+            if (!serverGraph) return;
+            
+            // Shift all data left and add new random data point
+            serverGraph.data.datasets[0].data.shift();
+            serverGraph.data.datasets[1].data.shift();
+            
+            serverGraph.data.datasets[0].data.push(Math.floor(Math.random() * 100));
+            serverGraph.data.datasets[1].data.push(Math.floor(Math.random() * 100));
+            
+            serverGraph.update();
+        }
+
         // Initialize and update clock every second
         updateClock();
         updateDate();
         setInterval(updateClock, 1000);
+
+        // Initialize graph
+        initializeGraph();
 
         // Update server status every 60 seconds (1 minute)
         updateServerStatus();
@@ -1165,6 +1285,9 @@
         // Update ping times every 5 seconds
         updatePingTimes();
         setInterval(updatePingTimes, 5000);
+
+        // Update graph every 5 seconds
+        setInterval(updateGraph, 5000);
     </script>
 </body>
 </html>
