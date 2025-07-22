@@ -20,6 +20,9 @@
             --excellent-color: #2ecc71;
             --good-color: #3498db;
             --highload-color: #f39c12;
+            --dtac-color: #3498db; /* Blue for DTAC */
+            --true-color: #e74c3c; /* Red for TRUE */
+            --ais-color: #2ecc71; /* Green for AIS */
         }
 
         .dark-mode {
@@ -34,6 +37,9 @@
             --excellent-color: #27ae60;
             --good-color: #2980b9;
             --highload-color: #d35400;
+            --dtac-color: #2980b9; /* Darker blue for DTAC in dark mode */
+            --true-color: #c0392b; /* Darker red for TRUE in dark mode */
+            --ais-color: #27ae60; /* Darker green for AIS in dark mode */
         }
 
         * {
@@ -508,21 +514,19 @@
             font-weight: bold;
             padding: 3px 8px;
             border-radius: 4px;
+            color: white;
         }
 
         .logo-text .providers span:nth-child(1) {
-            background-color: #FF5733;
-            color: white;
+            background-color: var(--dtac-color); /* DTAC - Blue */
         }
 
         .logo-text .providers span:nth-child(2) {
-            background-color: #3498db;
-            color: white;
+            background-color: var(--true-color); /* TRUE - Red */
         }
 
         .logo-text .providers span:nth-child(3) {
-            background-color: #2ecc71;
-            color: white;
+            background-color: var(--ais-color); /* AIS - Green */
         }
 
         @media (max-width: 768px) {
@@ -1185,17 +1189,27 @@
         }
 
         // Toggle Dark/Light Mode
-        document.getElementById('themeToggle').addEventListener('click', function() {
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
             const icon = this.querySelector('i');
             if (document.body.classList.contains('dark-mode')) {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
             } else {
                 icon.classList.remove('fa-sun');
                 icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
             }
         });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.querySelector('i').classList.remove('fa-moon');
+            themeToggle.querySelector('i').classList.add('fa-sun');
+        }
 
         // Update ping times dynamically
         function updatePingTimes() {
