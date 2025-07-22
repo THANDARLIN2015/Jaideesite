@@ -133,6 +133,7 @@
             box-shadow: var(--shadow);
             text-align: center;
             width: 280px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .download-card img {
@@ -173,6 +174,7 @@
             overflow: hidden;
             position: relative;
             min-height: 300px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .image-space img {
@@ -196,6 +198,7 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .server-card h3 {
@@ -282,6 +285,7 @@
             box-shadow: var(--shadow);
             margin-bottom: 30px;
             text-align: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .total-online h2 {
@@ -313,6 +317,7 @@
             padding: 20px;
             box-shadow: var(--shadow);
             margin-top: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .public-message h2 {
@@ -447,6 +452,7 @@
             padding: 20px;
             box-shadow: var(--shadow);
             margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
         }
 
         .graph-section h2 {
@@ -483,6 +489,40 @@
             0% { transform: scale(0.95); }
             50% { transform: scale(1.1); }
             100% { transform: scale(0.95); }
+        }
+
+        /* Custom styles for the requested elements */
+        .logo-text p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #FF5733, #C70039);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .logo-text .providers span {
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .logo-text .providers span:nth-child(1) {
+            background-color: #FF5733;
+            color: white;
+        }
+
+        .logo-text .providers span:nth-child(2) {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .logo-text .providers span:nth-child(3) {
+            background-color: #2ecc71;
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -542,7 +582,7 @@
                 <img src="https://raw.githubusercontent.com/THANDARLIN2015/Jaideesite/main/image/jdlogo.png" alt="Jaidee VPN Logo">
                 <div class="logo-text">
                     <h1>Jaidee VPN Users Website</h1>
-                    <p>The Best Free VPN Of Thailand</p>
+                    <p>The Best Free VPN For Thailand</p>
                     <div class="providers">
                         <span>DTAC</span>
                         <span>TRUE</span>
