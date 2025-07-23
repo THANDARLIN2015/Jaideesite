@@ -322,6 +322,48 @@
             color: var(--text-color);
         }
 
+        /* Video Section */
+        .video-section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin: 30px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
+        }
+
+        .video-section h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .thank-you {
+            text-align: center;
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
         .public-message {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -709,6 +751,18 @@
             <div class="graph-alive">
                 <div class="alive-dot"></div>
                 <span>Server Status: ALIVE</span>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <h2>How to Use Jaidee VPN</h2>
+            <div class="video-container">
+                <!-- Replace with your actual video embed code -->
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="thank-you">
+                Thank you for choosing our software!
             </div>
         </div>
 
