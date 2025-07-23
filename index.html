@@ -271,6 +271,7 @@
             height: 100%;
             width: 0%;
             transition: width 0.5s ease;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
         }
 
         .server-info {
@@ -278,6 +279,9 @@
             justify-content: space-between;
             margin-top: 15px;
             font-size: 14px;
+            padding: 10px;
+            background: linear-gradient(90deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+            border-radius: 5px;
         }
 
         .server-time {
@@ -325,12 +329,12 @@
             box-shadow: var(--shadow);
             margin-top: 30px;
             background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
-            border-left: 5px solid var(--primary-color);
+            border-left: 5px solid #2ecc71;
         }
 
         .public-message h2 {
             margin-bottom: 15px;
-            color: var(--primary-color);
+            color: #2ecc71;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -342,14 +346,15 @@
 
         .message-content {
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(46, 204, 113, 0.1);
             border-radius: 5px;
         }
 
         .message-content p {
             margin-bottom: 15px;
             padding-bottom: 15px;
-            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            border-bottom: 1px dashed rgba(46, 204, 113, 0.3);
+            color: var(--text-color);
         }
 
         .message-content p:last-child {
@@ -364,18 +369,18 @@
             align-items: center;
             margin: 10px 0;
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(46, 204, 113, 0.1);
             border-radius: 5px;
             transition: all 0.3s ease;
         }
 
         .subscription-code:hover {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(46, 204, 113, 0.2);
             transform: translateX(5px);
         }
 
         .copy-btn {
-            background-color: var(--primary-color);
+            background: linear-gradient(90deg, #3498db, #2ecc71);
             color: white;
             border: none;
             padding: 5px 10px;
@@ -386,7 +391,7 @@
         }
 
         .copy-btn:hover {
-            background-color: var(--dark-color);
+            background: linear-gradient(90deg, #2980b9, #27ae60);
             transform: scale(1.05);
         }
 
@@ -672,460 +677,7 @@
 
         <!-- Server Monitoring Section -->
         <div class="server-grid" id="serverGrid">
-            <!-- Thailand Servers -->
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 1</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-excellent">Excellent</span>
-                    </div>
-                    <span class="server-time" id="th-server1-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.8%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 2</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.6%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 3</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.9%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 4</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.7%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/th.png" alt="Thailand Flag"> Thailand Server 5</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.5%</span>
-                </div>
-            </div>
-
-            <!-- Singapore Servers -->
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 1</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-excellent">Excellent</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.5%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 2</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.3%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 3</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.8%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/sg.png" alt="Singapore Flag"> Singapore Server 4</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.6%</span>
-                </div>
-            </div>
-
-            <!-- Japan Servers -->
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 1</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-excellent">Excellent</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.9%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 2</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.7%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 3</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.8%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag"> Japan Server 4</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.5%</span>
-                </div>
-            </div>
-
-            <!-- India Servers -->
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 1</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-excellent">Excellent</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 98.7%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 2</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 98.9%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/in.png" alt="India Flag"> India Server 3</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 98.5%</span>
-                </div>
-            </div>
-
-            <!-- Korea Servers -->
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/kr.png" alt="Korea Flag"> Korea Server 1</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.2%</span>
-                </div>
-            </div>
-
-            <div class="server-card">
-                <h3><img src="https://flagcdn.com/w20/kr.png" alt="Korea Flag"> Korea Server 2</h3>
-                <div class="server-status">
-                    <div class="status-indicator">
-                        <div class="status-dot online"></div>
-                        <span>Online</span>
-                        <span class="server-status-label status-good">Good</span>
-                    </div>
-                    <span class="server-time">Server Time: 00:00:00</span>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-label">
-                        <span class="user-count">Users: 0/200</span>
-                        <span class="user-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-                <div class="server-info">
-                    <span class="ping">Ping: 0ms</span>
-                    <span>Uptime: 99.4%</span>
-                </div>
-            </div>
+            <!-- Server cards will be dynamically generated -->
         </div>
 
         <!-- Graph Section -->
@@ -1200,6 +752,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Server data that persists across refreshes
+        let serverData = JSON.parse(localStorage.getItem('serverData')) || {
+            servers: [
+                { name: "Thailand Server 1", country: "th", users: 45, uptime: "99.8%" },
+                { name: "Thailand Server 2", country: "th", users: 78, uptime: "99.6%" },
+                { name: "Thailand Server 3", country: "th", users: 32, uptime: "99.9%" },
+                { name: "Thailand Server 4", country: "th", users: 65, uptime: "99.7%" },
+                { name: "Thailand Server 5", country: "th", users: 89, uptime: "99.5%" },
+                { name: "Singapore Server 1", country: "sg", users: 28, uptime: "99.5%" },
+                { name: "Singapore Server 2", country: "sg", users: 54, uptime: "99.3%" },
+                { name: "Singapore Server 3", country: "sg", users: 42, uptime: "99.8%" },
+                { name: "Singapore Server 4", country: "sg", users: 67, uptime: "99.6%" },
+                { name: "Japan Server 1", country: "jp", users: 23, uptime: "99.9%" },
+                { name: "Japan Server 2", country: "jp", users: 56, uptime: "99.7%" },
+                { name: "Japan Server 3", country: "jp", users: 38, uptime: "99.8%" },
+                { name: "Japan Server 4", country: "jp", users: 72, uptime: "99.5%" },
+                { name: "India Server 1", country: "in", users: 34, uptime: "98.7%" },
+                { name: "India Server 2", country: "in", users: 61, uptime: "98.9%" },
+                { name: "India Server 3", country: "in", users: 47, uptime: "98.5%" },
+                { name: "Korea Server 1", country: "kr", users: 52, uptime: "99.2%" },
+                { name: "Korea Server 2", country: "kr", users: 68, uptime: "99.4%" }
+            ],
+            lastUpdated: Date.now()
+        };
+
         // Update Digital Clock
         function updateClock() {
             const now = new Date();
@@ -1241,31 +818,6 @@
             }
         });
 
-        // Auto theme based on time
-        function checkTimeForTheme() {
-            const now = new Date();
-            const hours = now.getHours();
-            // 6am to 6pm is day time (light mode)
-            const isDayTime = hours >= 6 && hours < 18;
-            
-            const currentTheme = document.body.getAttribute('data-theme');
-            const desiredTheme = isDayTime ? 'light' : 'dark';
-            
-            if (currentTheme !== desiredTheme) {
-                document.body.setAttribute('data-theme', desiredTheme);
-                const icon = themeToggle.querySelector('i');
-                if (desiredTheme === 'dark') {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                    localStorage.setItem('theme', 'light');
-                }
-            }
-        }
-
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', savedTheme);
@@ -1295,36 +847,48 @@
             return { text: "Good", class: "status-good" };
         }
 
-        // Update server status and online users
-        function updateServerStatus() {
+        // Render server cards based on serverData
+        function renderServerCards() {
+            const serverGrid = document.getElementById('serverGrid');
+            serverGrid.innerHTML = '';
+            
             let totalOnline = 0;
             const serverLimit = 200;
             
-            // Update server user counts
-            const userCountElements = document.querySelectorAll('.user-count');
-            userCountElements.forEach(el => {
-                const randomUsers = Math.floor(Math.random() * serverLimit);
-                totalOnline += randomUsers;
-                const percentage = (randomUsers / serverLimit * 100).toFixed(1);
-                el.textContent = `Users: ${randomUsers}/${serverLimit}`;
+            serverData.servers.forEach(server => {
+                const percentage = (server.users / serverLimit * 100).toFixed(1);
+                totalOnline += server.users;
                 
-                // Update progress bar
-                const progressFill = el.parentElement.nextElementSibling.querySelector('.progress-fill');
-                progressFill.style.width = `${percentage}%`;
-                
-                // Update progress bar color based on percentage
-                if (percentage < 30) progressFill.style.backgroundColor = "var(--excellent-color)";
-                else if (percentage < 60) progressFill.style.backgroundColor = "var(--good-color)";
-                else progressFill.style.backgroundColor = "var(--good-color)";
-                
-                // Update percentage text
-                el.nextElementSibling.textContent = `${percentage}%`;
-                
-                // Update status label
                 const statusLabel = getStatusLabel(percentage);
-                const statusElement = el.closest('.server-card').querySelector('.server-status-label');
-                statusElement.textContent = statusLabel.text;
-                statusElement.className = `server-status-label ${statusLabel.class}`;
+                
+                const serverCard = document.createElement('div');
+                serverCard.className = 'server-card';
+                serverCard.innerHTML = `
+                    <h3><img src="https://flagcdn.com/w20/${server.country}.png" alt="${server.name}"> ${server.name}</h3>
+                    <div class="server-status">
+                        <div class="status-indicator">
+                            <div class="status-dot online"></div>
+                            <span>Online</span>
+                            <span class="server-status-label ${statusLabel.class}">${statusLabel.text}</span>
+                        </div>
+                        <span class="server-time">Server Time: 00:00:00</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span class="user-count">Users: ${server.users}/${serverLimit}</span>
+                            <span class="user-percent">${percentage}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                    <div class="server-info">
+                        <span class="ping">Ping: 0ms</span>
+                        <span>Uptime: ${server.uptime}</span>
+                    </div>
+                `;
+                
+                serverGrid.appendChild(serverCard);
             });
             
             // Update total online users
@@ -1333,9 +897,28 @@
             
             // Update ping times
             updatePingTimes();
+        }
+
+        // Update server status and online users (only runs every 3 minutes)
+        function updateServerStatus() {
+            // Only update if more than 3 minutes have passed since last update
+            if (Date.now() - serverData.lastUpdated < 180000) {
+                return;
+            }
             
-            // Update graph
-            updateGraph();
+            const serverLimit = 200;
+            
+            // Update server user counts
+            serverData.servers.forEach(server => {
+                // Random variation of ±10 users from current count
+                const variation = Math.floor(Math.random() * 20) - 10;
+                server.users = Math.max(10, Math.min(serverLimit, server.users + variation));
+            });
+            
+            serverData.lastUpdated = Date.now();
+            localStorage.setItem('serverData', JSON.stringify(serverData));
+            
+            renderServerCards();
         }
 
         // Copy to clipboard function
@@ -1407,13 +990,14 @@
         updateDate();
         setInterval(updateClock, 1000);
 
-        // Initialize graph
+        // Initialize graph and server cards
         document.addEventListener('DOMContentLoaded', function() {
             initializeGraph();
+            renderServerCards();
+            updateServerStatus(); // Check if we need to update server data
         });
 
         // Update server status every 3 minutes (180000 milliseconds)
-        updateServerStatus();
         setInterval(updateServerStatus, 180000);
 
         // Update ping times every 5 seconds
@@ -1423,17 +1007,11 @@
         // Update graph every 5 seconds
         setInterval(updateGraph, 5000);
 
-        // Check time for theme every minute
-        checkTimeForTheme();
-        setInterval(checkTimeForTheme, 60000);
-
         // Initialize everything when page loads
         window.onload = function() {
             updateClock();
             updateDate();
-            updateServerStatus();
             updatePingTimes();
-            checkTimeForTheme();
         };
     </script>
 </body>
